@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
+    
+	<nav>
+    	<ul>
+        	<li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About me</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+		<section>
+			<h1>Contacts</h1>
+			<p>I'll be glad to chat with you!</p>
+            <p>Please fill out the form below and I will contact you as soon as possible.</p>
+			<form method="POST" action="https://formspree.io/f/xwkdkdoz">
+			<input type="hidden" id="send_to" name="send_to" value="karitskaja@gmail.com">
+				
+				<fieldset class="formacontact">
+					<legend>Your contact information</legend>
+					<label for="name">Your first name</label> 
+					<input type="text" id="name" name="name" required>
+                    <label for="lastname">Your last name</label> 
+					<input type="text" id="lastname" name="lastname" required>
+					<label for="phone">Phone number </label>
+					<input type="tel" id="phone" name="phone" placeholder="Don't forget the area code!" required>
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+				</fieldset>
+
+				<fieldset>
+					<legend> About our meeting </legend>
+					<label for="date"> When would you like to meet? </label>
+					<input type = "date" id="date" name="date" required>
+					<label for="qty">How many cups of coffee can you drink in a meeting?</label>
+					<input type="number" id="qty" name="qty" min="1" max="7">
+
+					<p> What is the purpose of our meeting?</p>
+					<label>
+					<input type="radio" name="meetingtype" value="job"> Future job
+					</label>
+
+					<label>
+					<input type="radio" name="meetingtype" value="project"> Future project
+					</label>
+
+					<label>
+					<input type="radio" name="meetingtype" value="chat"> Just chat with an interesting person
+					</label>
+
+					<label>
+					<input type="radio" name="meetingtype" value="dream" checked> I want to make your dream come true
+					</label>
+
+					<label>
+					<input type="radio" name="meetingtype" value="partner"> I want to be your business partner
+					</label>
+
+					<label> <p> Where do you prefer to meet?</p>
+
+					</label>
+					<select id="abtype" name="abtype">
+						<option> Select one... </option>
+						<option value="Dubai">Business center in Dubai</option>
+						<option value="Israel">Cafe "Aroma" in Israel</option>
+						<option value="Paris" selected>Eiffel Tower in Paris</option>
+						<option value="Bali">Beach cafe in Bali</option>
+					</select>
+
+					<label for="comments">Briefly describe your proposal so that I can prepare.:</label>
+					<textarea id="comments" name="comments" placeholder="I must be very interested because..." required></textarea>
+
+					<label>
+					<input type="checkbox" value="agree" name="agree" id="agree" checked> You agree if I come to meet with my husband.
+					</label>
+
+				</fieldset>
+
+				<button id="submitBtn" disabled> I'm waiting for our next meeting</button>
+
+			</form>	
+            	
+		</section>
+        
+    </div>
+	
+
+    <footer>
+        <div class="leftfooter">
+			<p> This page was built using:</p>
+			<p id="this_page"></p>
+			<p> and </p>
+			<p id="and"></p>
+		  </div>
+
+        <div class="rightfooter">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About me</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+    </footer>
+    <script src="../js/contact.js"></script>
+	<script src="../js/footer.js"></script>
+</body>
+</html>
