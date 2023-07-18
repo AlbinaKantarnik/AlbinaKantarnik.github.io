@@ -190,16 +190,36 @@ button:hover {
   color:  #A64138;
   animation: bounce 0.5s;
 }
-#submitBtn, .prev-button, .next-button {
+.prev1 button, .next1 button {
+  transition: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: none;
+}
+.prev1 button.enabled, .next1 button.enabled {
+  opacity: 1;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color:  #A64138;
+    animation: bounce 0.5s;
+  }
+}
+#submitBtn {
   transition: none;
   opacity: 0.5;
   cursor: not-allowed;
   animation: none;
 }
 
-#submitBtn.enabled, .prev-button.enabled, .next-button.enabled {
+#submitBtn.enabled {
   opacity: 1;
   cursor: pointer;
+  &:hover {
+    background-color: white;
+    color:  #A64138;
+    animation: bounce 0.5s;
+  }
 }
 
 input:not([type="radio"]):not([type="checkbox"]), textarea, select {
@@ -253,12 +273,12 @@ textarea {
   justify-content: space-between;
   height: 30px;
 }
-.prev-button {
+.prev1 {
   padding: 0 5px 5px 0;
   margin: 0;
   transform: translateY(-50%);
 }
-.next-button {
+.next1 {
   padding: 0 5px 5px 0;
   margin: 0;
   transform: translateY(-50%);
