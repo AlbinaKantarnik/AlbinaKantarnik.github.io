@@ -5,12 +5,14 @@
 body {
   font-family: sans-serif;
   height: 100vh;
-  background-color: #A64138;
+  background-image: url(../images/pion.jpg);
+  background-size: auto auto;
+  background-position: right;
 }
 
 .card {
   align-items: center;
-  background-color: #D99379;
+  background-color: #ddb1a1;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -22,23 +24,29 @@ body {
   padding: 6em 2em 2em 2em;
   font-size: 1rem;
 }
+#profile-image {
+  border: #cf948e 1px solid;
+}
 .card:active {
   color: white;
   border-radius: 10px;
   background: radial-gradient(circle at 0 0,  #f59f97, #732F29);
 }
 .card:hover {
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /*начение 0 0 8px rgba(0, 0, 0, 0.5) задает тень без смещения (0 0), радиус размытия 8 пикселей (8px) и цвет тени (rgba(0, 0, 0, 0.5))*/  
+  box-shadow: 0 0 50px rgba(59, 4, 4, 0.911); /*начение 0 0 8px rgba(0, 0, 0, 0.5) задает тень без смещения (0 0), радиус размытия 8 пикселей (8px) и цвет тени (rgba(0, 0, 0, 0.5))*/  
 }
-
+p {
+  line-height: 1.5;
+}
 a {
   text-decoration-color: #732F29;
   color: black;
 }
 nav {
   text-align: center;
+  font-size: 0.7rem;
   padding: 0.5rem 0;
-  background-color: #D95043;
+  background-color: #fab1aa;
   position: fixed;
   z-index: 100; /*  !! отвечает за:
   Порядок наложения в текущем контексте наложения.
@@ -55,9 +63,10 @@ nav ul {
 }
 nav li {
   width: 10rem;
-  background-color: #D95043;
+  background-color:  #fab1aa;
   text-align: center;
   display: inline-block;
+  margin: 0.5%;
 }
 nav a {
   border: 3px dotted #732F29;
@@ -69,7 +78,7 @@ nav a {
   display: block;
   padding: 0.5rem;
   &:hover {
-    background-color: #D99379;
+    background-color:  #ddb1a1;
     color:#732F29;
   }
 }
@@ -111,10 +120,10 @@ footer {
   bottom: 0; 
   padding: 1rem; 
   margin: 0;
-  background: #732F29; 
-  color: #D95043; 
+  font-size: small;
+  background:  #cf948e; 
+  color:#732F29; 
   width: 100%; 
-  height: 3rem;
   text-align: center;
   display: flex;
   flex-flow: row nowrap;
@@ -144,19 +153,20 @@ footer {
 }
 .rightfooter a {
   font-size: 1rem;
-  color: #D95043; 
+  color:  #732F29; 
   font-weight: bold;
   text-decoration: none;
   display: block;
  }
- .rightfooter a:hover {
-  color: #D99379;
+ .rightfooter li:hover {
+  text-decoration: underline;
+  text-decoration-color: #732F29;
 }
 /* contacts*/
 fieldset {
   border: 1px solid black;
   border-radius: 10px;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 legend {
   font-weight: bold;
@@ -234,26 +244,26 @@ input:not([type="radio"]):not([type="checkbox"]), textarea, select {
   height: 2rem;
 }
 textarea {
-  height: 15rem;
+  height: 10%;
   padding: 1rem;
 }
 
 .wrapper {
   width: 60%;
   margin: 0 auto;
-  padding: 5em 2em;
+  padding: 4em 2em 3em 2em;
   display: block;
   flex-flow: row nowrap;
-  background-color:  #D99379;
+  background-color:   #ddb1a1;
 }
 
 /* about */
 .wrapper1 {
   width: 60%;
   margin: 0 auto;
-  padding: 5em 2em;
+  padding: 4em 2em 3em 2em;
   display: block;
-  background-color:  #D99379;
+  background-color:   #ddb1a1;
 }
 .wrapper1 article {
   padding: 1em;

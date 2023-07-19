@@ -1,17 +1,12 @@
 
 const GITHUB_URL = "https://api.github.com/users/AlbinaKantarnik"; 
 
-fetch(GITHUB_URL)
-  //Asks for retrieveng information from the server.
+fetch(GITHUB_URL)  //Получение HTTP-запросов и получения данных извне.
 
   .then(function (response) {
-    return response.json();
+    return response.json(); //преобразование ответа в JavaScript-объект
   })
-  //Means to retrieve from the server and "then" execute the function according to the server's response.
-  //Creates an object from the corresponding response.
-
-  .then(function (data) {
-    //"Then" make a function witrh the "data", which is whatever the server sent back to us.
+  .then(function (data) { //получаем данные от сервера
 
     const profileImage = document.getElementById("profile-image");
     const profileName = document.getElementById("profile-name");

@@ -1,5 +1,4 @@
 function checkFormCompletion() {
-  // Получаем все необходимые поля формы
   const nameInput = document.querySelector('#name');
   const lastnameInput = document.querySelector('#lastname');
   const phoneInput = document.querySelector('#phone');
@@ -9,8 +8,7 @@ function checkFormCompletion() {
   const commentsInput = document.querySelector('#comments');
   const submitBtn = document.querySelector('#submitBtn');
   
-  // Проверяем, заполнены ли все поля
-  if (
+  if ( // все ли поля заполнены
     nameInput.value !== '' &&
     emailInput.value !== '' &&
     phoneInput.value !== '' &&
@@ -29,10 +27,9 @@ function checkFormCompletion() {
   }
 }
 
-// Получаем ссылку на форму
 const form = document.querySelector('form');
 
-// Добавляем обработчики события input на каждое поле формы
+// + обработчики события input на каждое поле формы
 const nameInput = document.querySelector('#name');
 nameInput.addEventListener('input', checkFormCompletion);
 
@@ -51,5 +48,4 @@ qtyInput.addEventListener('input', checkFormCompletion);
 const commentsInput = document.querySelector('#comments');
 commentsInput.addEventListener('input', checkFormCompletion);
 
-// Вызываем функцию проверки заполнения формы при загрузке страницы
 checkFormCompletion();

@@ -1,4 +1,3 @@
-// Получаем элементы слайдера
 
   const slider = document.querySelector('.slider');
   const prevButton = document.querySelector('.prev1 button');
@@ -7,23 +6,20 @@
   const slideCount = slides.length;
   let slideIndex = 0;
 
-  
-// Устанавливаем обработчики событий для кнопок
+  // Устанавливаем обработчики событий для кнопок
   prevButton.addEventListener('click', showPreviousSlide);
   nextButton.addEventListener('click', showNextSlide);
 
-// Функция для показа предыдущего слайда
   function showPreviousSlide(){
     if (slideIndex === 0) {
     // Если текущий слайд первый, оставляем его без изменений
     return;
     }
-    slideIndex--; //уменьшает значение переменной slideIndex на 1. Это позволяет перейти к предыдущему слайду в слайдере.
+    slideIndex--; 
     updateSlider();
     updateSliderButtons();
   }
 
-// Функция для показа следующего слайда
   function showNextSlide() {
     if (slideIndex === slideCount - 1) {
     // Если текущий слайд последний, оставляем его без изменений
@@ -34,7 +30,6 @@
     updateSliderButtons();
   }
 
-// Функция для обновления отображения слайдера
   function updateSlider() {
   slides.forEach((slide, index) => {
       if (index === slideIndex) {
