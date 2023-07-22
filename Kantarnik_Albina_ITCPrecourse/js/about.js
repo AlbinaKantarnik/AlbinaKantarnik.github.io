@@ -1,64 +1,74 @@
 
-  const slider = document.querySelector('.slider');
-  const prevButton = document.querySelector('.prev1 button');
-  const nextButton = document.querySelector('.next1 button');
-  const slides = Array.from(slider.querySelectorAll('iframe'));
-  const slideCount = slides.length;
-  let slideIndex = 0;
+const prevButton = document.querySelector('.prev1 button');
+const nextButton = document.querySelector('.next1 button');
+const CitySlider = [
+  {
+  city: "1",
+  iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.3926662053273!2d2.296674197569844!3d48.85710383606593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2z0K3QudGE0LXQu9C10LLQsCDQsdCw0YjQvdGP!5e0!3m2!1sru!2sil!4v1689629226814!5m2!1sru!2sil"
+  },
+    
+  {
+  city: "2",
+  iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12360.819847512583!2d-43.18227482793683!3d-22.917290316676887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f7b55fe685d%3A0x76011e047b252c35!2z0JvQtdGB0YLQvdC40YbQsCDQodC10LvQsNGA0L7QvdCw!5e0!3m2!1sru!2sil!4v1689628804990!5m2!1sru!2sil"
+  },
+    
+  {
+  city: "3",
+  iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d162773.87017261758!2d-74.08965985347417!3d40.7056855891818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2589a018531e3%3A0xb9df1f7387a94119!2z0KbQtdC90YLRgNCw0LvRjNC90YvQuSDQv9Cw0YDQug!5e0!3m2!1sru!2sil!4v1689628862578!5m2!1sru!2sil"
+  },
 
-  // Устанавливаем обработчики событий для кнопок
-  prevButton.addEventListener('click', showPreviousSlide);
-  nextButton.addEventListener('click', showNextSlide);
-
-  function showPreviousSlide(){
-    if (slideIndex === 0) {
-    // Если текущий слайд первый, оставляем его без изменений
-    return;
-    }
-    slideIndex--; 
-    updateSlider();
-    updateSliderButtons();
+  {
+  city: "4",
+  iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12461611.20831021!2d3.4190616924502106!3d40.311600102342034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47842318d8eabf7f%3A0x4c74f13f06d99095!2z0JLQuNC70LvQsCDQkdCw0LvQsdGM0Y_QvdC10LvQu9C-!5e0!3m2!1sru!2sil!4v1689629137313!5m2!1sru!2sil"
   }
+]
 
-  function showNextSlide() {
-    if (slideIndex === slideCount - 1) {
-    // Если текущий слайд последний, оставляем его без изменений
-      return;
-    }
-    slideIndex++;
-    updateSlider();
-    updateSliderButtons();
+let slideIndex = 0;
+
+prevButton.addEventListener('click', showPreviousSlide);
+nextButton.addEventListener('click', showNextSlide);
+
+function updateSlider() {
+let cityName = CitySlider[slideIndex].city;
+let iframe = CitySlider[slideIndex].iframe;
+document.querySelector('.slider iframe').src = iframe;
+console.log("city: ", cityName);
+}
+
+function showPreviousSlide(){
+  if (slideIndex === 0) {
+  return;
   }
-
-  function updateSlider() {
-  slides.forEach((slide, index) => {
-      if (index === slideIndex) {
-        slide.style.display = 'block'; // код применяет стиль 'block' для активного слайда (с индексом, равным slideIndex), и стиль 'none' для всех остальных слайдов, чтобы они оставались скрытыми.
-     } else {
-        slide.style.display = 'none';
-     }
-    });
-  }
-
-  function updateSliderButtons() {
-    if (slideIndex === 0) {
-      prevButton.disabled = true;
-      prevButton.classList.remove('enabled');
-    } else {
-      prevButton.disabled = false;
-      prevButton.classList.add('enabled');
-    }
-
-    if (slideIndex === slides.length - 1) {
-      nextButton.disabled = true;
-      nextButton.classList.remove('enabled');
-    } else {
-      nextButton.disabled = false;
-      nextButton.classList.add('enabled');
-    }
-  }
+  slideIndex--; 
   updateSlider();
-  updateSliderButtons()
+  updateSliderButtons();
+}
 
+function showNextSlide() {
+  if (slideIndex === CitySlider.length - 1) {
+  return;
+  }
+  slideIndex++;
+  updateSlider();
+  updateSliderButtons();
+}
 
+function updateSliderButtons() {
+  if (slideIndex === 0) {
+    prevButton.disabled = true;
+    prevButton.classList.remove('enabled');
+  } else {
+    prevButton.disabled = false;
+    prevButton.classList.add('enabled');
+  }
 
+  if (slideIndex === CitySlider.length - 1) {
+    nextButton.disabled = true;
+    nextButton.classList.remove('enabled');
+  } else {
+    nextButton.disabled = false;
+    nextButton.classList.add('enabled');
+  }
+}
+updateSlider();
+updateSliderButtons()
